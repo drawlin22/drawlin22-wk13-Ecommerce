@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
-// The `/api/categories` endpoint
 
+//Api route to get all categories
 router.get('/', async (req, res) => {
   try {
     const Categorymany = await Category.findAll({
@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
   }
   });
  
+  //Api route to get a single category
 router.get('/:id', async (req, res) => {
   try {
     const Categorysingle = await Category.findByPk(req.params.id, {
@@ -21,7 +22,7 @@ router.get('/:id', async (req, res) => {
     });
 
     if (!Categorysingle) {
-      res.status(404).json({ message: 'No Product found with that id!' });
+      res.status(404).json({ message: 'No Category found with that id!' });
       return;
     }
 
@@ -31,6 +32,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//Api route to create a category
 router.post('/', async (req, res) => {
   try {
     const categoryData = await Category.create(req.body);
@@ -40,6 +42,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//Api route to update a category
 router.put('/:id', async (req, res) => {
   try {
   const categoryUpdate = await Category.update(
@@ -56,6 +59,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+//Api route to delete a category
 router.delete('/:id', async (req, res) => {
   try {
     const Categorydestroy = await Category.destroy({
