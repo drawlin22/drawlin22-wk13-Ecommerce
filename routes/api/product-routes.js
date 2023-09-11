@@ -102,6 +102,9 @@ router.put('/:id', (req, res) => {
     });
 });
 
+
+//Api route to delete a product by id
+
 router.delete('/:id', async (req, res) => {
   try {
     const Productdestroy = await Product.destroy({
@@ -118,7 +121,6 @@ router.delete('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-  // delete one product by its `id` value
 });
 
 module.exports = router;
