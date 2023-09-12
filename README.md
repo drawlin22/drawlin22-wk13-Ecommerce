@@ -3,7 +3,7 @@
 
 
 ## Description: 
-This project was to create a command-line appliation that helps to view and manage departments, roles, and employees for a business owner. Multiple user inputs are accepts to view and update employee records, add new employees, add new departments, and add new roles.
+This project was to create the back end for an e-commerce website using the latest technologies. This project uses MySQL, express, node, and Insomnia to build and test HTTP API routes for get, post, put, and delete updates on the company database.
 
  ## Installation:
 
